@@ -1,16 +1,15 @@
-package com.lwen.pandora.DO;
+package com.lwen.pandora.entity;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name = "function_point", schema = "pandora", catalog = "")
-public class FunctionPointEntity {
+@Table(name = "org", schema = "pandora", catalog = "")
+public class OrgEntity {
     private int id;
     private String name;
     private Timestamp createTime;
-    private String url;
 
     @Id
     @Column(name = "ID")
@@ -42,29 +41,18 @@ public class FunctionPointEntity {
         this.createTime = createTime;
     }
 
-    @Basic
-    @Column(name = "URL")
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        FunctionPointEntity that = (FunctionPointEntity) o;
-        return id == that.id &&
-                Objects.equals(name, that.name) &&
-                Objects.equals(createTime, that.createTime) &&
-                Objects.equals(url, that.url);
+        OrgEntity orgEntity = (OrgEntity) o;
+        return id == orgEntity.id &&
+                Objects.equals(name, orgEntity.name) &&
+                Objects.equals(createTime, orgEntity.createTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, createTime, url);
+        return Objects.hash(id, name, createTime);
     }
 }

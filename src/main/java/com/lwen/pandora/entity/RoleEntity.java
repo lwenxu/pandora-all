@@ -1,15 +1,14 @@
-package com.lwen.pandora.DO;
+package com.lwen.pandora.entity;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name = "role_menu", schema = "pandora", catalog = "")
-public class RoleMenuEntity {
+@Table(name = "role", schema = "pandora", catalog = "")
+public class RoleEntity {
     private int id;
-    private Integer roleId;
-    private Integer menuId;
+    private String name;
     private Timestamp createTime;
 
     @Id
@@ -23,23 +22,13 @@ public class RoleMenuEntity {
     }
 
     @Basic
-    @Column(name = "ROLE_ID")
-    public Integer getRoleId() {
-        return roleId;
+    @Column(name = "NAME")
+    public String getName() {
+        return name;
     }
 
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
-    }
-
-    @Basic
-    @Column(name = "MENU_ID")
-    public Integer getMenuId() {
-        return menuId;
-    }
-
-    public void setMenuId(Integer menuId) {
-        this.menuId = menuId;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Basic
@@ -56,15 +45,14 @@ public class RoleMenuEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        RoleMenuEntity that = (RoleMenuEntity) o;
+        RoleEntity that = (RoleEntity) o;
         return id == that.id &&
-                Objects.equals(roleId, that.roleId) &&
-                Objects.equals(menuId, that.menuId) &&
+                Objects.equals(name, that.name) &&
                 Objects.equals(createTime, that.createTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, roleId, menuId, createTime);
+        return Objects.hash(id, name, createTime);
     }
 }

@@ -1,4 +1,4 @@
-package com.lwen.pandora.DO;
+package com.lwen.pandora.entity;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -6,7 +6,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "core_audit", schema = "pandora", catalog = "")
-public class CoreAuditEntity {
+public class AuditEntity {
     private int id;
     private String functionName;
     private Integer userId;
@@ -100,7 +100,7 @@ public class CoreAuditEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CoreAuditEntity that = (CoreAuditEntity) o;
+        AuditEntity that = (AuditEntity) o;
         return id == that.id &&
                 Objects.equals(functionName, that.functionName) &&
                 Objects.equals(userId, that.userId) &&

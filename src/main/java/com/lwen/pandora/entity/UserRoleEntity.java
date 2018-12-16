@@ -1,16 +1,16 @@
-package com.lwen.pandora.DO;
+package com.lwen.pandora.entity;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name = "file", schema = "pandora", catalog = "")
-public class FileEntity {
+@Table(name = "user_role", schema = "pandora", catalog = "")
+public class UserRoleEntity {
     private int id;
-    private String name;
-    private String path;
     private Integer userId;
+    private Integer roleId;
+    private Integer orgId;
     private Timestamp createTime;
 
     @Id
@@ -24,26 +24,6 @@ public class FileEntity {
     }
 
     @Basic
-    @Column(name = "NAME")
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Basic
-    @Column(name = "PATH")
-    public String getPath() {
-        return path;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
-    }
-
-    @Basic
     @Column(name = "USER_ID")
     public Integer getUserId() {
         return userId;
@@ -51,6 +31,26 @@ public class FileEntity {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    @Basic
+    @Column(name = "ROLE_ID")
+    public Integer getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
+    }
+
+    @Basic
+    @Column(name = "ORG_ID")
+    public Integer getOrgId() {
+        return orgId;
+    }
+
+    public void setOrgId(Integer orgId) {
+        this.orgId = orgId;
     }
 
     @Basic
@@ -67,16 +67,16 @@ public class FileEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        FileEntity that = (FileEntity) o;
+        UserRoleEntity that = (UserRoleEntity) o;
         return id == that.id &&
-                Objects.equals(name, that.name) &&
-                Objects.equals(path, that.path) &&
                 Objects.equals(userId, that.userId) &&
+                Objects.equals(roleId, that.roleId) &&
+                Objects.equals(orgId, that.orgId) &&
                 Objects.equals(createTime, that.createTime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, path, userId, createTime);
+        return Objects.hash(id, userId, roleId, orgId, createTime);
     }
 }

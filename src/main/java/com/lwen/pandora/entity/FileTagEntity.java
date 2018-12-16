@@ -1,4 +1,4 @@
-package com.lwen.pandora.DO;
+package com.lwen.pandora.entity;
 
 import javax.persistence.*;
 import java.util.Objects;
