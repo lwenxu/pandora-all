@@ -17,3 +17,6 @@ spring:
       filters: stat,wall
       connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
       use-global-data-source-stat: true
+  data:
+    rest:
+      base-path: /api/v1/
