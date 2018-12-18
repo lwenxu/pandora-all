@@ -2,11 +2,13 @@ package com.lwen.pandora.entity;
 
 import lombok.*;
 
-@Data
+import java.io.Serializable;
+
 @AllArgsConstructor
+@Data
+@NoArgsConstructor
 @RequiredArgsConstructor
-@Builder(toBuilder = true)
-public class ResultEntity<T> {
+public class ResultEntity<T> implements Serializable {
     @NonNull
     private Integer code;
     @NonNull

@@ -1,7 +1,7 @@
 package com.lwen.pandora.dao;
 
-import com.lwen.pandora.entity.UserEntity;
+import com.lwen.pandora.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<UserEntity,Long> {
+public interface UserRepository extends JpaRepository<User,Integer> {
 }

@@ -20,3 +20,7 @@ spring:
   data:
     rest:
       base-path: /api/v1/
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true

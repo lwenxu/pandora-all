@@ -1,7 +1,7 @@
 package com.lwen.pandora.dao;
 
-import com.lwen.pandora.entity.FunctionPointEntity;
+import com.lwen.pandora.entity.FunctionPoint;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface FunctionPointRepository extends JpaRepository<FunctionPointEntity,Long> {
+public interface FunctionPointRepository extends JpaRepository<FunctionPoint,Integer> {
 }

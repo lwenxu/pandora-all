@@ -1,7 +1,7 @@
 package com.lwen.pandora.dao;
 
-import com.lwen.pandora.entity.AuditEntity;
+import com.lwen.pandora.entity.Audit;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface AuditRepository extends JpaRepository<AuditEntity,Long> {
+public interface AuditRepository extends JpaRepository<Audit,Integer> {
 }
