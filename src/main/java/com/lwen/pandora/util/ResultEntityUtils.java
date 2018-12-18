@@ -6,7 +6,7 @@ import lombok.NonNull;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass
-public class ResultUtils<T> {
+public class ResultEntityUtils<T> {
     public static<T> ResultEntity success() {
         return new ResultEntity<T>(
                 ResultEnum.SUCCESS.getCode(),

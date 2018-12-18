@@ -15,5 +15,6 @@ public class ResultEntity<T> implements Serializable {
     private String msg;
     @NonNull
     private Boolean success;
+    private Exception exception;
     private T data;
 }

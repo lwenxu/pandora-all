@@ -15,9 +15,10 @@ public class User implements Serializable {
     private String username;
     private String nickname;
     private String password;
+    private String salt;
     private Timestamp createTime;
     private Timestamp updateTime;
-    private String state;
+    private Integer state;
     private String email;
     private String phone;
     private Integer avatar;
