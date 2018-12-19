@@ -27,4 +27,6 @@ spring:
 
 pandora:
   user:
-    encrypt-type: "HASH"
+    encrypt-type: "MD5"
+  dev:
+    app-debug: true

@@ -9,7 +9,8 @@ public enum ResultVOEnum {
     USERNAME_PASSWORD_AUTH_ERROR(102,"用户名或密码错误"),
     AUTH_EXPIRED_ERROR(103,"用户认证信息过期"),
     USER_LOCKED_ERROR(104,"用户被锁定"),
-    LOGIN_ERROR(105,"用户认证失败");
+    LOGIN_ERROR(105,"用户认证失败"),
+    Unauthorized_ERROR(106,"用户未认证");
     private Integer code;
     private String msg;
 

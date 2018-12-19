@@ -26,7 +26,7 @@ public class IndexController {
         return userRepository.findAll();
     }
 
-    @PostMapping("/login")
+    @PostMapping(path = "/login",produces = "application/json")
     public ResultVO login(UserVO user) {
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(user.getUsername(), user.getPassword());
@@ -43,6 +43,6 @@ public class IndexController {
                 return ResultVOUtils.failed(ResultVOEnum.LOGIN_ERROR);
             }
         }
-        return ResultVOUtils.success();
+        return ResultVOUtils.success("登录成功！");
     }
 }
